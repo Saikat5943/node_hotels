@@ -1,8 +1,12 @@
 //db.js file in that case it is create the translator in mongoose
 //this mongoose is the connection between node.js server and mongpdb server
 const mongoose=require("mongoose");
+require("dotenv").config();
 //define the mongoDB connection URL
-const mongoURL='mongodb://localhost:27017/hotel';//Replace 'hotel' with your database name
+//local database mongdb compus
+//const mongoURL=process.env.MONGODB_URL_LOCAL;//Replace 'hotel' with your database name
+//online database mongodb atlas
+const mongoURL=process.env.MONGODB_URL;
 //hotel name database is create this hotel database under all data is store
 mongoose.connect(mongoURL,{
     useNewUrlParser:true,
